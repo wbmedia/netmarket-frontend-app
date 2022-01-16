@@ -27,6 +27,7 @@ export const Navigation = () => {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Link to="/registrar">Registrar</Link>
               <Link to="/login">Login</Link>
+              <Link to="/libros">Libros</Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
