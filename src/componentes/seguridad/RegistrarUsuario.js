@@ -40,7 +40,8 @@ const RegistrarUsuario = () => {
 
   const guardarUsuario = () => {
     registrarUsuario(usuario).then((response) => {
-      console.log(`response: ${response}`);
+      console.log(`response: ${JSON.stringify(response)}`);
+      window.localStorage.setItem('token', response.data.token);
     });
     setUsuario(clearUsuario);
   };
