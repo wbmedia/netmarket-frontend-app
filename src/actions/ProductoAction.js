@@ -1,13 +1,15 @@
-import { requestGenerico } from "./../services/HttpClient";
+import HttpCliente  from "./../services/HttpClient";
 
-export const getProductos = () => {
+export const getProductos = (request) => {
   return new Promise((resolve, reject) => {
-    requestGenerico.get("/api/producto")
+    HttpCliente.get(`/api/producto?pageIndex=${request.pageIndex}&pageSize${request.pageSize}&search=${request.search}`)
       .then((response) => {
-        resolve(response.data);
+        resolve(response);
       })
       .catch((error) => {
         reject(error);
       });
   });
 };
+
+
